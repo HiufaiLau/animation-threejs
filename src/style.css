@@ -33,3 +33,33 @@ body {
   padding-top: 3em;
   position: relative;
 }
+
+.content::before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #fff;
+  transform: scaleX(1);
+}
+
+h1,
+p {
+  /* create 50%/50% layout */
+  flex-basis: 0;
+  flex-grow: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+h1 {
+  font-size: 4rem;
+  width: 50vw;
+  line-height: 97%;
+  text-align: right;
+}
+
+p {
+  font-size: 1.3rem;
+  width: 40vw;
+}
