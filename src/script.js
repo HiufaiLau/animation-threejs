@@ -1,17 +1,17 @@
-import './style.css';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import * as dat from 'dat.gui';
+import "./style.css";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import * as dat from "dat.gui";
 
 // Texture loader
 const loader = new THREE.TextureLoader();
-const cross = loader.load('./full-stop.png');
+const cross = loader.load("./full-stop.png");
 
 // Debug
 const gui = new dat.GUI();
 
 // Canvas
-const canvas = document.querySelector('canvas.webgl');
+const canvas = document.querySelector("canvas.webgl");
 
 // Scene
 const scene = new THREE.Scene();
@@ -32,7 +32,7 @@ for (let i = 0; i < particlesCount * 3; i++) {
 }
 
 particlesGeometry.setAttribute(
-  'position',
+  "position",
   new THREE.BufferAttribute(positionArray, 3)
 );
 
@@ -73,7 +73,7 @@ const sizes = {
   height: window.innerHeight,
 };
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   // Update sizes
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;
@@ -114,10 +114,10 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.setClearColor(new THREE.Color('#21282a'), 0.8);
+renderer.setClearColor(new THREE.Color("#21282a"), 0.8);
 
 // Mouse
-document.addEventListener('mousemove', animateParticles);
+document.addEventListener("mousemove", animateParticles);
 let mouseX = 0;
 let mouseY = 0;
 
